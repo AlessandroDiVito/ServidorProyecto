@@ -19,7 +19,7 @@ public class Main {
                 socket.receive(recibo);//recibo datagrama
                 int bytesRec = recibo.getLength();//obtengo numero de bytes
                 String paquete = new String(recibo.getData());//obtengo String
-                if (paquete.equals("STOP")) {
+                if (paquete.trim().equalsIgnoreCase("STOP")) {
                     break;
                 }
                 System.out.println("Server: numero de Bytes recibidos->" + bytesRec);
